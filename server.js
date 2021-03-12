@@ -49,8 +49,7 @@ app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
 
   // client.on('error', function (err) {
   //   client.quit()
-
-    // generatePNG(req, res, null)
+    generatePNG(req, res, null)
   // })
 
   // client.on('connect', function (err) {
@@ -78,8 +77,7 @@ function sendPNG(response, png, filename) {
 
 async function generatePNG(req, res, redis) {
   // Params
-  try {
-    const style = req.params.style
+  const style = req.params.style
   const currency = req.params.currency
   const size = req.params.size
   const color = req.params.color
@@ -122,6 +120,8 @@ async function generatePNG(req, res, redis) {
     iconCircle.setAttribute('fill', colorString)
   }
 
+  res.send('Hello World3!' + req.params.style);
+  return;
   // Convert to PNG
   const png = await convert(element.innerHTML, {
     'height' : size,
@@ -138,9 +138,6 @@ async function generatePNG(req, res, redis) {
 
   // Return response
   sendPNG(res, png, filename)
-  } catch (error) {
-    res.send('Hello World!2' + error)
-  }
 }
 
 // Listen
