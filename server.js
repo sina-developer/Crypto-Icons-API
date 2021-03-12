@@ -49,7 +49,8 @@ app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
 
   // client.on('error', function (err) {
   //   client.quit()
-    generatePNG(req, res, null)
+
+    // generatePNG(req, res, null)
   // })
 
   // client.on('connect', function (err) {
@@ -77,7 +78,8 @@ function sendPNG(response, png, filename) {
 
 async function generatePNG(req, res, redis) {
   // Params
-  const style = req.params.style
+  try {
+    const style = req.params.style
   const currency = req.params.currency
   const size = req.params.size
   const color = req.params.color
@@ -127,7 +129,6 @@ async function generatePNG(req, res, redis) {
     'puppeteer' : {'args' : ['--no-sandbox', '--disable-setuid-sandbox']}
   });
 
-  res.send('Hello World!2' + req.params.style)
   // Save to redis
   if (redis != null) {
     redis.set(cacheKey, png, function(err) {
@@ -137,6 +138,9 @@ async function generatePNG(req, res, redis) {
 
   // Return response
   sendPNG(res, png, filename)
+  } catch (error) {
+    res.send('Hello World!2' + error)
+  }
 }
 
 // Listen
