@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/api/test', function(req, res) {
-  res.sendFile('test.html');
+  res.send('Hello World!')
 })
 
 // GET png
