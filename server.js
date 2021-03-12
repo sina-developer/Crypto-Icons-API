@@ -15,57 +15,57 @@ app.get('/', function(req, res) {
   res.sendFile('index.html');
 })
 
-app.get('/test/:name', function(req, res) {
+app.get('/api/test/:name', function(req, res) {
   return req.params.name;
 })
 
 // GET png
-app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
-  // Params
-  const style = req.params.style
-  const currency = req.params.currency
-  const size = req.params.size
-  const cacheKey = req.path
-  const filename = currency + '-' + style + '-' + size + '.png'
+// app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
+//   // Params
+//   const style = req.params.style
+//   const currency = req.params.currency
+//   const size = req.params.size
+//   const cacheKey = req.path
+//   const filename = currency + '-' + style + '-' + size + '.png'
 
-  // Validate size is > 0
-  if (size <= 0) {
-    res.status(400).send({'error' : 'Invalid size'});
-    return
-  }
+//   // Validate size is > 0
+//   if (size <= 0) {
+//     res.status(400).send({'error' : 'Invalid size'});
+//     return
+//   }
 
-  // // Redis
-  // var redisRetryStrategy = function(options) {
-  //   if (options.error.code === 'ECONNREFUSED') {
-  //     return
-  //   }
-  // }
+//   // // Redis
+//   // var redisRetryStrategy = function(options) {
+//   //   if (options.error.code === 'ECONNREFUSED') {
+//   //     return
+//   //   }
+//   // }
 
-  // const redisURL = process.env.REDIS_URL || 'http://127.0.0.1:6379'
-  // var client = require('redis').createClient({
-  //   url : process.env.REDIS_URL,
-  //   return_buffers : true
-  // })
+//   // const redisURL = process.env.REDIS_URL || 'http://127.0.0.1:6379'
+//   // var client = require('redis').createClient({
+//   //   url : process.env.REDIS_URL,
+//   //   return_buffers : true
+//   // })
 
-  // client.on('error', function (err) {
-  //   client.quit()
-    generatePNG(req, res, null)
-  // })
+//   // client.on('error', function (err) {
+//   //   client.quit()
+//     generatePNG(req, res, null)
+//   // })
 
-  // client.on('connect', function (err) {
-  //   // Check cache
-  //   client.get(cacheKey, async(error, result) => {
-  //     if (result == null) {
-  //       console.log("Cache miss")
-  //       generatePNG(req, res, client)
-  //     } else {
-  //       client.quit()
-  //       console.log("Cache hit")
-  //       sendPNG(res, result, filename)
-  //     }
-  //   })
-  // })
-})
+//   // client.on('connect', function (err) {
+//   //   // Check cache
+//   //   client.get(cacheKey, async(error, result) => {
+//   //     if (result == null) {
+//   //       console.log("Cache miss")
+//   //       generatePNG(req, res, client)
+//   //     } else {
+//   //       client.quit()
+//   //       console.log("Cache hit")
+//   //       sendPNG(res, result, filename)
+//   //     }
+//   //   })
+//   // })
+// })
 
 // Functions
 
