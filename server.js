@@ -15,6 +15,10 @@ app.get('/', function(req, res) {
   res.sendFile('index.html');
 })
 
+app.get('/test/:name', function(req, res) {
+  return req.params.name;
+})
+
 // GET png
 app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
   // Params
