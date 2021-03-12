@@ -120,7 +120,7 @@ async function generatePNG(req, res, redis) {
     iconCircle.setAttribute('fill', colorString)
   }
 
-  res.send('Hello World3!' + req.params.style);
+  res.send(element.innerHTML);
   return;
   // Convert to PNG
   const png = await convert(element.innerHTML, {
