@@ -30,37 +30,37 @@ app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
     return
   }
 
-  // Redis
-  var redisRetryStrategy = function(options) {
-    if (options.error.code === 'ECONNREFUSED') {
-      return
-    }
-  }
+  // // Redis
+  // var redisRetryStrategy = function(options) {
+  //   if (options.error.code === 'ECONNREFUSED') {
+  //     return
+  //   }
+  // }
 
-  const redisURL = process.env.REDIS_URL || 'http://127.0.0.1:6379'
-  var client = require('redis').createClient({
-    url : process.env.REDIS_URL,
-    return_buffers : true
-  })
+  // const redisURL = process.env.REDIS_URL || 'http://127.0.0.1:6379'
+  // var client = require('redis').createClient({
+  //   url : process.env.REDIS_URL,
+  //   return_buffers : true
+  // })
 
-  client.on('error', function (err) {
-    client.quit()
+  // client.on('error', function (err) {
+  //   client.quit()
     generatePNG(req, res, null)
-  })
+  // })
 
-  client.on('connect', function (err) {
-    // Check cache
-    client.get(cacheKey, async(error, result) => {
-      if (result == null) {
-        console.log("Cache miss")
-        generatePNG(req, res, client)
-      } else {
-        client.quit()
-        console.log("Cache hit")
-        sendPNG(res, result, filename)
-      }
-    })
-  })
+  // client.on('connect', function (err) {
+  //   // Check cache
+  //   client.get(cacheKey, async(error, result) => {
+  //     if (result == null) {
+  //       console.log("Cache miss")
+  //       generatePNG(req, res, client)
+  //     } else {
+  //       client.quit()
+  //       console.log("Cache hit")
+  //       sendPNG(res, result, filename)
+  //     }
+  //   })
+  // })
 })
 
 // Functions
