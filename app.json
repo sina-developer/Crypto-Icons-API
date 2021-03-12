@@ -2,7 +2,7 @@
   "name": "Crypto Icons",
   "description": "API for crypto currency icons",
   "repository": "https://github.com/reddavis/Crypto-Icons-API",
-  "website": "http://cryptoicons.org",
+  "website": "https://s-tag-crypto-icons.herokuapp.com/",
   "addons": ["heroku-redis:hobby-dev"],
   "buildpacks": [
     {
