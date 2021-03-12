@@ -34,7 +34,6 @@ app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
     return
   }
 
-  res.send('Hello World!' + req.params.style)
   // // Redis
   // var redisRetryStrategy = function(options) {
   //   if (options.error.code === 'ECONNREFUSED') {
@@ -50,7 +49,7 @@ app.get('/api/:style/:currency/:size/:color?', async(req, res) => {
 
   // client.on('error', function (err) {
   //   client.quit()
-    // generatePNG(req, res, null)
+    generatePNG(req, res, null)
   // })
 
   // client.on('connect', function (err) {
@@ -128,6 +127,7 @@ async function generatePNG(req, res, redis) {
     'puppeteer' : {'args' : ['--no-sandbox', '--disable-setuid-sandbox']}
   });
 
+  res.send('Hello World!2' + req.params.style)
   // Save to redis
   if (redis != null) {
     redis.set(cacheKey, png, function(err) {
