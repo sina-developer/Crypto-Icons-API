@@ -1,15 +1,16 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="38" y="22" width="181" height="212">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M178.256 22.9924H38V233.008H175.462L219 189.469V63.7365L178.256 22.9924ZM178.931 68.5878H80.8321V188.794H178.931V68.5878Z" fill="#C4C4C4"/>
+<rect width="256" height="256" rx="128" fill="#A2BABA"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="63" y="52" width="131" height="152">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M164.511 52H63V204H162.489L194 172.489V81.4889L164.511 52ZM165 85H94V172H165V85Z" fill="#C4C4C4"/>
 </mask>
 <g mask="url(#mask0)">
-<rect x="10.3664" y="-0.496185" width="70.4657" height="69.084" fill="#F36883"/>
-<rect x="10.3664" y="68.5878" width="71.8473" height="44.2137" fill="#F2D27D"/>
-<rect x="10.3664" y="112.802" width="71.8473" height="80.1374" fill="#42D5A5"/>
-<rect x="4.83969" y="188.794" width="174.092" height="49.7405" fill="#666666"/>
-<rect x="169.26" y="61.6794" width="64.9389" height="128.496" fill="#666666"/>
-<rect x="80.8321" y="10.5573" width="98.0992" height="58.0305" fill="#666666"/>
-<rect x="178.931" y="-10.1679" width="106.389" height="78.7557" fill="#878787"/>
-<rect x="178.931" y="188.794" width="116.061" height="71.8473" fill="#878787"/>
+<rect x="43" y="35" width="51" height="50" fill="#F36883"/>
+<rect x="43" y="85" width="52" height="32" fill="#F2D27D"/>
+<rect x="43" y="117" width="52" height="58" fill="#42D5A5"/>
+<rect x="39" y="172" width="126" height="36" fill="#666666"/>
+<rect x="158" y="80" width="47" height="93" fill="#666666"/>
+<rect x="94" y="43" width="71" height="42" fill="#666666"/>
+<rect x="165" y="28" width="77" height="57" fill="#878787"/>
+<rect x="165" y="172" width="84" height="52" fill="#878787"/>
 </g>
 </svg>
